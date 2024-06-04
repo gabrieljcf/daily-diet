@@ -29,7 +29,8 @@ export function Statistics() {
       const mealInDiet = data.filter((meal) => meal.diet).length;
       setMealInDiet(mealInDiet);
       const dietPercentage = mealInDiet / totalMeal * 100
-      setDietPecentage(+dietPercentage.toFixed(2))
+      const percentage = isNaN(dietPercentage) ? 0 : +dietPercentage.toFixed(2);
+      setDietPecentage(+percentage.toFixed(2))
       const mealOutDiet = data.filter((meal) => !meal.diet).length;
       setMealOutDiet(mealOutDiet);
     } catch (error) {
@@ -43,8 +44,8 @@ export function Statistics() {
     fetchMeals();
   }, []);
   return (
-    <Container type="PRIMARY">
-      <Header type="PRIMARY" />
+    <Container type={dietPercentage < 50 ? 'SECONDARY' : 'PRIMARY'}>
+      <Header type={dietPercentage < 50 ? 'SECONDARY' : 'PRIMARY'} />
       {isLoading ? (
         <Loading />
       ) : (

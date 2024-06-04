@@ -15,7 +15,7 @@ const COLOR_MAPPING = {
 
 export const Container = styled.View<Props>`
   align-items: center;
-  width: ${({ fullWidth }) => fullWidth && "100%"};
+  width: ${({ fullWidth }) => fullWidth ? "100%" : "48%"};
   padding: 16px;
   margin-bottom: 12px;
   border-radius: 8px;

@@ -38,7 +38,7 @@ export const MealText = styled.Text`
 `;
 
 export const MealBadge = styled.View<Props>`
-  border-radius: 50%;
+  border-radius: 100px;
   width: 14px;
   height: 14px;
   background-color: ${({ theme, diet }) =>

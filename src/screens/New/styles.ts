@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Container = styled.View`
   flex: 1;
@@ -13,7 +12,7 @@ export const SplitContainer = styled.View`
 `;
 
 
-export const FieldsContainer = styled.View`
+export const FieldsContainer = styled.ScrollView`
   flex: 1;
   width: 100%;
 `;

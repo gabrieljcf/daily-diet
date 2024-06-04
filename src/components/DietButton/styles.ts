@@ -38,7 +38,7 @@ type BadgeProps = {
 export const Badge = styled.View<BadgeProps>`
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 100px;
   background-color: ${({ theme, type }) =>
     type === "PRIMARY" ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK};
   margin-right: 5px;

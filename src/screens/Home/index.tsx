@@ -28,9 +28,10 @@ export function Home() {
   const [percentage, setPercentage] = useState(0);
 
   function calculatePercentage(meals: Meal[]) {
-    const mealInDiet = meals.filter((meal) => meal.diet).length;
-    const calculatePercentage = (mealInDiet / meals.length) * 100;
-    return +calculatePercentage.toFixed(2);
+    const mealInDiet = meals.filter((meal) => meal.diet).length || 0;
+    const total = meals.length || 0
+    const calculatePercentage = (mealInDiet / total) * 100;
+    return isNaN(calculatePercentage) ? 0 : +calculatePercentage.toFixed(2);
   }
 
   async function fetchMeals() {
@@ -74,8 +75,8 @@ export function Home() {
         <Profile source={logoImg} />
       </HomeHeader>
 
-      <PercentageButton type="PRIMARY" onPress={handleViewStatistics}>
-        <Icon type="PRIMARY" />
+      <PercentageButton type={percentage < 50 ? 'SECONDARY' : 'PRIMARY'} onPress={handleViewStatistics}>
+        <Icon type={percentage < 50 ? 'SECONDARY' : 'PRIMARY'} />
         <PercentageHeader percentage={percentage} />
       </PercentageButton>
 

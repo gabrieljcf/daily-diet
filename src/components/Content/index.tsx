@@ -1,6 +1,6 @@
-import { KeyboardAvoidingViewProps, ViewProps } from "react-native";
+import { ViewProps } from "react-native";
 import { Container } from "./styles";
 
-export function Content(props: KeyboardAvoidingViewProps) {
+export function Content(props: ViewProps) {
   return <Container {...props}></Container>
 }

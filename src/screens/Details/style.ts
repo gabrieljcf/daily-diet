@@ -43,7 +43,7 @@ export const Tag = styled.View`
   justify-content: center;
   height: 34px;
   width: 144px;
-  padding: 8px 16px;
+  padding: 0px 16px;
   border-radius: 1000px;
   background-color: ${({ theme }) => theme.COLORS.GRAY_6};
 `;
@@ -56,7 +56,7 @@ type BadgeProps = {
 export const Badge = styled.View<BadgeProps>`
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 100px;
   background-color: ${({ theme, type }) =>
     type === "PRIMARY" ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK};
   margin-right: 5px;

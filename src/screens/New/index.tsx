@@ -79,14 +79,11 @@ export function Register() {
   return (
     <Container>
       <Header action={!id ? "Nova refeição" : "Editar refeição"} />
-      <Content
-        enabled={Platform.OS === "ios" ? true : false}
-        behavior="padding"
-      >
+      <Content>
         {isLoading ? (
           <Loading />
         ) : (
-          <FieldsContainer>
+          <FieldsContainer showsVerticalScrollIndicator={false}>
             <Input
               label="Nome"
               inputRef={nameInput}
